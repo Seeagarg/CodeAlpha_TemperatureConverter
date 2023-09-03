@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Temperature Converto</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn0.iconfinder.com/data/icons/weather-406/24/degree-convert-conversion-celsius-temperature-fahrenheit-centigrade-weather-degrees-512.png">
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/free-photo/galactic-night-sky-astronomy-science-combined-generative-ai_188544-9656.jpg?q=10&h=200");
+            background-repeat: no-repeat;
+            background-size: cover;
+           
+        }
+        .container{
+            margin: 10% 20%;
+            padding: 5% 5%;
+            text-align: center;
+            background-color: black;
+            opacity: 0.7;
+            z-index: 0;
+            border-radius: 15px;
+            box-shadow:  5px 5px 10px #aaaaaa;
+
+        }
+        .container2{
+            color: white;
+            z-index: 200;
+        }
+        .input{
+            font-size: large;
+            
+        }
+        .inp{
+            margin: 10px;
+            font-size: large;
+            border-radius: 5px;
+            width: 50%;
+        }
+        @media only screen and (max-width: 600px) {
+           
+           .inp{
+            width: 90%;
+           }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="container2">
+            <h1>Temperature Converter</h1>
+            <div class="input">
+                <label for="">Celcius</label> <br>
+                <input type="number" value="0" id="cel" class="inp">
+            </div>
+            <div class="input">
+                <label for="">Farneheit</label> <br>
+                <input type="number" value="32" id="fah" class="inp">
+            </div>
+        </div>
+    </div>
+    <script>
+        var cel = document.getElementById("cel");
+        var fah = document.getElementById("fah");
+
+        cel.addEventListener('input',function(){
+            // console.log("Value changed");
+            let c = this.value;
+            let f = (c*9/5)+32;
+            fah.value = f;
+        });
+
+        fah.addEventListener('input',function(){
+            let f = this.value;
+            let c = (f-32)*5/9;
+            cel.value = c;
+        })
+
+    </script>
+</body>
+</html>
